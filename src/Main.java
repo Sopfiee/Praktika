@@ -23,13 +23,15 @@ public class Main {
             switch (sc.nextInt()) {
                 case 1: {
                     System.out.println("Введите название книги, автора, год издания и количество через запятую:");
+                    sc.nextLine();
                     s = sc.nextLine();
                     library.add_book(s);
                     System.out.println("Книга успешно добавлена!");
                     break;
                 }
                 case 2: {
-                    System.out.println("Введите название книги, автора, год издания и количество через запятую:");
+                    System.out.println("Введите название книги, автора, год издания и {количество} через запятую:");
+                    sc.nextLine();
                     s = sc.nextLine();
                     library.remove_book(s);
                     System.out.println("Книга успешно удалена!");
