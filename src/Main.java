@@ -1,14 +1,16 @@
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.lang.String;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws SQLException, IOException {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Добро пожаловать!");
-        boolean t = true;
+        boolean is_work = true;
         Library library = new Library();
-        String s;
-        while (t) {
+        String data;
+        while (is_work) {
             System.out.println("Что вы хотите сделать?" +
                     "\n1.Добавить книгу;" +
                     "\n2.Удалить книгу;" +
@@ -18,53 +20,53 @@ public class Main {
                     "\n6.Отчёт по всем книгам в наличии;" +
                     "\n7.Отчёт по взятым книгам;" +
                     "\n8.Выйти.");
-            switch (sc.nextInt()) {
+            switch (scanner.nextInt()) {
                 case 1: {
                     System.out.println("Введите название книги, автора, год издания и количество через запятую:");
-                    sc.nextLine();
-                    s = sc.nextLine();
-                    library.add_book(s);
+                    scanner.nextLine();
+                    data = scanner.nextLine();
+                    library.addBook(data);
                     break;
                 }
                 case 2: {
                     System.out.println("Введите название книги, автора, год издания и количество через запятую:");
-                    sc.nextLine();
-                    s = sc.nextLine();
-                    library.remove_book(s);
+                    scanner.nextLine();
+                    data = scanner.nextLine();
+                    library.removeBook(data);
                     break;
                 }
                 case 3: {
                     System.out.println("Введите название книги, автора, год издания, количество и получателя через запятую:");
-                    sc.nextLine();
-                    s = sc.nextLine();
-                    library.give_book(s);
+                    scanner.nextLine();
+                    data = scanner.nextLine();
+                    library.giveBook(data);
                     break;
                 }
                 case 4: {
                     System.out.println("Введите название книги, автора, год издания, количество и читателя через запятую:");
-                    sc.nextLine();
-                    s = sc.nextLine();
-                    library.return_book(s);
+                    scanner.nextLine();
+                    data = scanner.nextLine();
+                    library.returnBook(data);
                     break;
                 }
                 case 5: {
                     System.out.println("Поиск по:\n1.Название книги;\n2.Автор;\n3.Год издания;" +
                             "\n4.Читатель;\n5.Количество общее;\n6.Количество в наличии.");
-                    int c = sc.nextInt();
-                    sc.nextLine();
-                    library.search_book(c);
+                    int c = scanner.nextInt();
+                    scanner.nextLine();
+                    library.searchBook(c);
                     break;
                 }
                 case 6: {
-                    library.show_all_books();
+                    library.showAllBooks();
                     break;
                 }
                 case 7: {
-                    library.show_borrowed_books();
+                    library.showBorrowedBooks();
                     break;
                 }
                 case 8: {
-                    t = false;
+                    is_work = false;
                     System.out.println("Всего хорошего!");
                     break;
                 }
