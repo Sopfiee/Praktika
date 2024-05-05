@@ -6,10 +6,10 @@ import java.lang.String;
 public class Main {
     public static void main(String[] args) throws SQLException, IOException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Добро пожаловать!");
         boolean is_work = true;
         Library library = new Library();
         String data;
+        System.out.println("Добро пожаловать!");
         while (is_work) {
             System.out.println("Что вы хотите сделать?" +
                     "\n1.Добавить книгу;" +
